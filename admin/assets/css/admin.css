@@ -1,0 +1,46 @@
+body
+{
+    font-family: "Barlow Semi Condensed", sans-serif !important;
+}
+:root
+{
+    --color-1: #181C14;
+    --color-2: #3C3D37;
+    --color-3: #697565;
+    --color-4: #fff;
+    --color-5: #fcff00;
+}
+.content
+{
+    padding: 20px;
+}
+.products_count,.category_count
+{
+    width: 150px;
+    height: 150px;
+    background: var(--color-5);
+    border-radius: 50%;
+    margin: auto;
+    transition: 0.2s linear;
+}
+.products_count .content,.category_count .content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.products_count:hover,.category_count:hover
+{
+    transform: scale(1.1);
+    border-radius: 10px;
+}
+.products_count a,.category_count a
+{
+    color: var(--color-1);
+}
+.products_count a:hover,.category_count a:hover
+{
+    color: var(--color-1);
+}

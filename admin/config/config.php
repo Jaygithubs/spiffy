@@ -1,0 +1,19 @@
+<?php
+
+if(!defined('BASE_URL'))
+{
+    define('BASE_URL','http://localhost/spiffy/');
+}
+if(!defined('ADMIN_URL'))
+{
+    define('ADMIN_URL',BASE_URL.'admin/');
+}
+if(!defined('IMGFOLDER'))
+{
+    define('IMGFOLDER',ADMIN_URL.'assets/images/');
+}
+if(!defined('ASSETS'))
+{
+    define('ASSETS',ADMIN_URL.'assets/');
+}
+?>
