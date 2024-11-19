@@ -1,0 +1,56 @@
+.content
+{
+    height: 100vh;
+    overflow-y: scroll;
+}
+input
+{
+    border: none;
+    width: 100%;
+    border: 1px solid var(--color-5);
+    padding: 5px 10px;
+}
+input:focus-visible
+{
+    border: 2px solid var(--color-5);
+    outline: none;
+    border-radius: 10px;
+}
+label
+{
+    padding: 10px 0;
+}
+.add_category_btn
+{
+    border: none;
+    background-color: var(--color-1);
+    color: var(--color-4);
+    margin: 10px;
+    padding: 5px 40px;
+    border-radius: 10px;
+    font-weight: 600;   
+}
+.category_table ul
+{
+    padding: 10px;
+    margin: 0;
+}
+.category_table
+{
+    border: 5px solid var(--color-5);    
+}
+.category_table ul li
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.delete_icon,.update_icon
+{
+    padding: 0 10px;
+}
+.category_table ul li:nth-child(odd)
+{
+    background-color: var(--color-5);
+    color: var(--color-1);
+}

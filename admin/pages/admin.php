@@ -17,7 +17,7 @@ include('../components/headerlink.php');
                                 <a href="<?=ADMIN_URL?>pages/products.php" target="_blank">
                                     <div class="content">
                                         <h5>Products</h4>
-                                        <h5>20</h5>
+                                        <h5>3</h5>
                                     </div>
                                 </a>
                             </div>
@@ -27,7 +27,7 @@ include('../components/headerlink.php');
                                 <a href="<?=ADMIN_URL?>pages/add_category.php" target="_blank">
                                     <div class="content">
                                         <h5>Categories</h5>
-                                        <h5>4</h5>
+                                        <h5>3</h5>
                                     </div>
                                 </a>
                             </div>

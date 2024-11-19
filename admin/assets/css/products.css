@@ -1,0 +1,28 @@
+.frontimage
+{
+    width: 10%;
+}
+thead
+{
+    position: sticky;
+}
+thead tr td
+{
+    background-color: var(--color-1);
+    color: var(--color-4);
+    text-align: center;
+}
+tbody tr td
+{
+    text-align: center;
+    padding: 5px 10px;
+    width: fit-content;
+}
+.product_table
+{
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: 0 0 5px 5px whitesmoke;
+    background: whitesmoke;
+    border-radius: 10px;
+}

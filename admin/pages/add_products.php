@@ -1,5 +1,6 @@
 <?php
 include('../components/headerlink.php');
+include("../config/db.php");
 ?>
 
 <main>
@@ -11,6 +12,44 @@ include('../components/headerlink.php');
             <div class="col-sm-10 p-0">
                 <div class="content">
                     <h4>Add Product</h4>
+                    <form action="" method="post" id="add_product" enctype="multipart/form-data">
+                        <label for="productname">Product Name</label>
+                        <input type="text" name="productname" id="productname" placeholder="Enter product name" required>
+                        <br>
+                        <label for="short_discription">Short Discription</label>
+                        <input type="text" name="short_discription" id="short_discription" placeholder="Enter product short discription">
+                        <br>
+                        <label for="discription">Discription</label>
+                        <input type="text" name="discription" id="discription" placeholder="Enter product long discription" required>
+                        <br>
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" placeholder="Enter your product price" required>
+                        <br>
+                        <label for="category">Category</label>
+                        <select name="category" id="category" required>
+                            <option value="">Select product category</option>
+                            <?php
+                            $category=$conn->prepare("SELECT * FROM `category`");
+                            if($category->execute())
+                            {
+                                $category_result=$category->get_result();
+                                foreach($category_result->fetch_all(MYSQLI_ASSOC) as $category)
+                                {
+                                    ?>
+                                    <option value="<?=$category['category']?>"><?=$category['category']?></option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                        <br>
+                        <label for="frontimage">Upload product front image</label>
+                        <input type="file" name="frontimage" id="frontimage" required>
+                        <br>
+                        <label for="productimagegallery">Product Gallery Images</label>
+                        <input type="file" name="productimagegallery" id="productimagegallery" required multiple>
+                        <button type="submit" class="add_product_btn">Add Product <i class="bi bi-arrow-right-short"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
