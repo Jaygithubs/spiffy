@@ -13,19 +13,22 @@ include("../config/db.php");
                 <div class="content">
                     <h4>Add Product</h4>
                     <form action="" method="post" id="add_product" enctype="multipart/form-data">
-                        <label for="productname">Product Name</label>
+                        <label for="productname">Product Name: </label>
                         <input type="text" name="productname" id="productname" placeholder="Enter product name" required>
                         <br>
-                        <label for="short_discription">Short Discription</label>
-                        <input type="text" name="short_discription" id="short_discription" placeholder="Enter product short discription">
+                        <label for="short_discription">Short Discription: </label>
+                        <textarea cols="100" rows="5" type="text" name="short_discription" id="short_discription" placeholder="Enter product short discription"></textarea>
                         <br>
-                        <label for="discription">Discription</label>
-                        <input type="text" name="discription" id="discription" placeholder="Enter product long discription" required>
+                        <label for="discription">Cost Detail: </label><br>
+                        <textarea cols="100" rows="10" type="text" name="discription" id="discription" placeholder="Enter product cost details" required></textarea>
                         <br>
-                        <label for="price">Price</label>
+                        <label for="note">Note: </label><br>
+                        <textarea name="note" id="note" placeholder="Enter product note here"></textarea>
+                        <br>
+                        <label for="price">Price: </label>
                         <input type="number" name="price" id="price" placeholder="Enter your product price" required>
                         <br>
-                        <label for="category">Category</label>
+                        <label for="category">Category: </label>
                         <select name="category" id="category" required>
                             <option value="">Select product category</option>
                             <?php
@@ -43,10 +46,10 @@ include("../config/db.php");
                             ?>
                         </select>
                         <br>
-                        <label for="frontimage">Upload product front image</label>
+                        <label for="frontimage">Upload product front image: </label>
                         <input type="file" name="frontimage" id="frontimage" required>
                         <br>
-                        <label for="productimagegallery">Product Gallery Images</label>
+                        <label for="productimagegallery">Product Gallery Images: </label>
                         <input type="file" name="productimagegallery" id="productimagegallery" required multiple>
                         <button type="submit" class="add_product_btn">Add Product <i class="bi bi-arrow-right-short"></i></button>
                     </form>

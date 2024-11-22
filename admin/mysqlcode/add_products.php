@@ -10,6 +10,7 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
     $description = $_POST['discription'];
     $price = $_POST['price'];
     $category = $_POST['category'];
+    $note=$_POST['note'];
 
     // File upload directory
     $uploadDir = '../assets/images/productimages/';
@@ -71,15 +72,16 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
     // Normally, you would save product data (including the image paths) to a database
     // For simplicity, we'll just return the response here.
 
-    $add_product_sql = $conn->prepare("INSERT INTO `products`(`productname`, `price`, `category`, `shortdiscription`, `discription`, `frontimages`, `galleryimages`) VALUES (?,?,?,?,?,?,?)");
+    $add_product_sql = $conn->prepare("INSERT INTO `products`(`productname`, `price`, `category`, `shortdiscription`, `discription`, `note`, `frontimages`, `galleryimages`) VALUES (?,?,?,?,?,?,?,?)");
 
     // Bind the parameters: note the types 's' for string, 'd' for decimal, and 's' for the JSON string
-    $add_product_sql->bind_param('sdsssss', $productname, $price, $category, $short_description, $description, $frontImagePath, $galleryJson);
+    $add_product_sql->bind_param('sdssssss', $productname, $price, $category, $short_description, $description,$note, $frontImagePath, $galleryJson);
 
     if ($add_product_sql->execute()) {
         echo json_encode([
             "status" => true,
-            "message" => "Product added successfully!"
+            "message" => "Product added successfully!",
+            "galleryimagejson"=>$galleryJson
         ]);
     } else {
         echo json_encode([

@@ -1,0 +1,40 @@
+input,textarea
+{
+    border: none;
+    width: 100%;
+    border: 1px solid var(--color-5);
+    padding: 5px 10px;
+}
+input:focus-visible,textarea:focus-visible
+{
+    border: 2px solid var(--color-5);
+    outline: none;
+    border-radius: 10px;
+}
+label
+{
+    padding: 10px 0;
+}
+select
+{
+    border: none;
+    border: 1px solid var(--color-5);
+    padding: 5px 10px;
+    width: 100%;
+}
+select:focus-visible
+{
+    outline: none;
+    border: 2px solid var(--color-5);
+    border-radius: 10px;
+}
+.product_update_btn
+{
+    border: none;
+    background-color: var(--color-1);
+    color: var(--color-4);
+    margin: 10px;
+    padding: 5px 40px;
+    border-radius: 10px;
+    font-weight: 600;   
+}

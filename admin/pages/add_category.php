@@ -16,7 +16,7 @@ include("../config/db.php");
                             <h4>Add Category</h4>
                             <form action="" method="post" id="add_category">
                                 <label for="category">Category</label>
-                                <input type="text" name="category" id="category" placeholder="Enter category name">
+                                <input type="text" name="category" id="category" placeholder="Enter category name" required>
                                 <button type="submit" class="add_category_btn">Add Category <i class="bi bi-arrow-right-short"></i></button>
                             </form>
                         </div>

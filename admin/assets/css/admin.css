@@ -13,6 +13,8 @@ body
 .content
 {
     padding: 20px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 .products_count,.category_count
 {
@@ -23,7 +25,7 @@ body
     margin: auto;
     transition: 0.2s linear;
 }
-.products_count .content,.category_count .content
+.products_count .product_content,.category_count .category_content
 {
     display: flex;
     justify-content: center;

@@ -20,4 +20,8 @@ if(!defined('CURRENT_PAGE'))
 {
     define('CURRENT_PAGE',$currentPage = pathinfo(basename($_SERVER['PHP_SELF']), PATHINFO_FILENAME));
 }
+if(!defined('FILE_VERSION'))
+{
+    define('FILE_VERSION',rand(1,1000));
+}
 ?>

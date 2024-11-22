@@ -3,6 +3,17 @@ $(document).ready(function() {
         e.preventDefault();  // Prevent the default form submission
 
         var formData = new FormData(this);  // Create FormData object from the form element
+        let product_add_btn=$(".add_product_btn");
+        
+        if (product_add_btn.length) {
+            // Disable the submit button to prevent multiple submissions
+            product_add_btn.prop('disabled', true);
+        } else {
+            console.error("Submit button not found.");
+            return;  // Stop the function if submit button is not found
+        }
+        
+        
 
         $.ajax({
             type: "POST",
@@ -24,6 +35,9 @@ $(document).ready(function() {
             error: function(xhr, status, error) {
                 console.error("Error:", error);
                 alert("There was an error with the request.");
+            },
+            complete:function() {
+                product_add_btn.prop('disabled', false);
             }
         });
     });

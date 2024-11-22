@@ -5,6 +5,18 @@ $(document).ready(function () {
     $("#add_category").on("submit", (e) => {
         e.preventDefault(); // Prevent form submission
         let formData = new FormData(e.currentTarget); // e.currentTarget refers to the form
+        let add_category_btn=$(".add_category_btn");
+
+        if(add_category_btn.length)
+        {
+            add_category_btn.prop('disabled', true);
+        }
+        else
+        {
+            console.log("Disable button error");
+            return
+        }
+        
         $.ajax({
             type: "POST",
             url: $base_url+"mysqlcode/add_category.php",
@@ -18,6 +30,12 @@ $(document).ready(function () {
                     alert("Category inserted");
                     location.reload();
                 }
+            },
+            error: function (xhr,status,error) {
+                alert(error);
+              },
+              complete:function() {
+                add_category_btn.prop('disabled', false);
             }
         });
         
@@ -41,7 +59,6 @@ $(document).ready(function () {
                 }
             }
         });
-        console.log(category_id);
     })
     
 });

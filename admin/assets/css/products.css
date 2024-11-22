@@ -5,12 +5,14 @@
 thead
 {
     position: sticky;
+    top: 10px;
 }
 thead tr td
 {
     background-color: var(--color-1);
     color: var(--color-4);
     text-align: center;
+    padding: 0 10px;
 }
 tbody tr td
 {
@@ -25,4 +27,12 @@ tbody tr td
     box-shadow: 0 0 5px 5px whitesmoke;
     background: whitesmoke;
     border-radius: 10px;
+}
+.product_edit,.product_delete
+{
+    cursor: pointer;
+}
+.product_edit a{
+    text-decoration: none;
+    color: var(--color-1) !important;
 }

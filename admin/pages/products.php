@@ -1,6 +1,7 @@
 <?php
 include('../components/headerlink.php');
 include("../config/db.php");
+
 ?>
 
 <main>
@@ -22,6 +23,7 @@ include("../config/db.php");
                                     <td>Price</td>
                                     <td>Short Discription</td>
                                     <td>Discription</td>
+                                    <td>Note</td>
                                     <td colspan="2">Operations</td>
                                 </tr>
                             </thead>
@@ -41,8 +43,13 @@ include("../config/db.php");
                                                 <td><?=$productData['price']?></td>
                                                 <td><?=$productData['shortdiscription']?></td>
                                                 <td><?=$productData['discription']?></td>
-                                                <td class="product_edit"><i class="bi bi-pencil-square"></i></td>
-                                                <td class="product_delete"><i class="bi bi-trash3-fill"></i></td>
+                                                <td><?=$productData['note']?></td>
+                                                <td class="product_edit">
+                                                    <a href="<?=ADMIN_URL?>components/product_update.php?id=<?=$productData['id']?>" target="_blank" rel="noopener noreferrer">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </a>
+                                                </td>
+                                                <td class="product_delete" product_id="<?=$productData['id']?>"><i class="bi bi-trash3-fill"></i></td>
                                             </tr>
                                         <?php
                                     }
