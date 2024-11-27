@@ -41,10 +41,10 @@
                                             <a href="faqs.php">FAQs</a>
                                         </li>
                                         <li>
-                                            <a href="">Privacy Policy</a>
+                                            <a href="">Design your own</a>
                                         </li>
                                         <li>
-                                            <a href="">Return Policy</a>
+                                            <a href="<?=BASE_URL?>/custom-request-form">Bulk Orders</a>
                                         </li>
                                     </ul>
                                 </div>

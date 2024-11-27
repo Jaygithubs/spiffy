@@ -10,6 +10,7 @@ include("../config/db.php");
                 <?php include('../components/sidebar.php'); ?>
             </div>
             <div class="col-sm-10 p-0">
+                <div class="loader m-2"></div>
                 <div class="content">
                     <h4>Add Product</h4>
                     <form action="" method="post" id="add_product" enctype="multipart/form-data">
@@ -50,7 +51,7 @@ include("../config/db.php");
                         <input type="file" name="frontimage" id="frontimage" required>
                         <br>
                         <label for="productimagegallery">Product Gallery Images: </label>
-                        <input type="file" name="productimagegallery" id="productimagegallery" required multiple>
+                        <input type="file" name="productimagegallery[]" id="productimagegallery" required multiple>
                         <button type="submit" class="add_product_btn">Add Product <i class="bi bi-arrow-right-short"></i></button>
                     </form>
                 </div>

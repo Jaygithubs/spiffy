@@ -1,8 +1,15 @@
+# Enable mod_rewrite
+RewriteEngine On
 
-
-# php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php73” package as the default “PHP” programming language.
+# PHP handler for PHP 8.0 (Update this to match your PHP version)
 <IfModule mime_module>
-  AddHandler application/x-httpd-ea-php73___lsphp .php .php7 .phtml
+  AddHandler application/x-httpd-ea-php80___lsphp .php .php7 .phtml
 </IfModule>
-# php -- END cPanel-generated handler, do not edit
+
+# Remove .php extension if the file is not an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Rule for product-features page (matches /spiffy/frontend/product-features/ category and id)
+RewriteRule ^spiffy/frontend/product-features/([^/]+)/([0-9]+)/?$ spiffy/frontend/product-features.php?category=$1&id=$2 [L,QSA]

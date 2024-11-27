@@ -64,6 +64,14 @@
                                                     <div class="section-content">
                                                         <div class="faq-item">
                                                             <div class="faq-question">
+                                                                What’s Spiffy Sole all about?
+                                                            </div>
+                                                            <div class="faq-answer">
+                                                                At Spiffy Sole, we transform everyday sneakers, denim, and totes into bold, hand-painted statement that resonates your personal style.
+                                                            </div>
+                                                        </div>
+                                                        <div class="faq-item">
+                                                            <div class="faq-question">
                                                                 Does the paint come off?
                                                             </div>
                                                             <div class="faq-answer">

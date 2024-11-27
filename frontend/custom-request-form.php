@@ -34,14 +34,14 @@
     <body class="page">
         <div id="page" class="hfeed page-wrapper">
             
-            <header id="site-header" class="site-header header-v1 absolute">
+            <header id="site-header" class="site-header header-v1">
                 <?php include('inc/header.php'); ?>
             </header>
 
             <div id="site-main" class="site-main">
                 <div id="main-content" class="main-content">
                     <div id="primary" class="content-area">
-                        <div id="title" class="page-title">
+                        <!-- <div id="title" class="page-title">
                             <div class="section-container">
                                 <div class="content-title-heading">
                                     <h1 class="text-title-heading">
@@ -49,7 +49,7 @@
                                     </h1>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div id="content" class="site-content" role="main">
                             <div class="page-contact">

@@ -24,10 +24,7 @@ if (isset($_FILES['frontimage']) && $_FILES['frontimage']['error'] == 0) {
         exit;
     }
 } 
-// else {
-//     echo json_encode(["status" => false, "message" => "Front image is required."]);
-//     exit;
-// }
+
 
 if(empty($_FILES['frontimage']['name']))
 {
@@ -66,10 +63,6 @@ $uploadedGalleryImages = [];
             if (move_uploaded_file($galleryImageTmp, $galleryImagePath)) {
                 $uploadedGalleryImages[] = $galleryImagePath;  // Save the path of the uploaded image
             } 
-            // else {
-            //     echo json_encode(["status" => false, "message" => "Failed to upload the gallery image."]);
-            //     exit;
-            // }
         }
     }
 

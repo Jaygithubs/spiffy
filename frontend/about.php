@@ -33,20 +33,21 @@
 
     <body class="page">
         <div id="page" class="hfeed page-wrapper">
-            <header id="site-header" class="site-header header-v1 absolute">
+            <header id="site-header" class="site-header header-v1">
+            <!-- absolute -->
                 <?php include('inc/header.php'); ?>
             </header>
 
             <div id="site-main" class="site-main">
                 <div id="main-content" class="main-content">
                     <div id="primary" class="content-area">
-                        <div id="title" class="page-title">
+                        <!-- <div id="title" class="page-title">
                             <div class="section-container">
                                 <div class="content-title-heading">
                                     <h1 class="text-title-heading">
                                         About Us
                                     </h1>
-                                </div>
+                                </div> -->
                                 <!--                                <div class="breadcrumbs">
                                                                     <a href="index.html">Home</a><span class="delimiter"></span>About Us
                                                                 </div>-->

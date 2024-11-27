@@ -461,7 +461,7 @@
 @media (min-width: 1199px) {
   .home .site-header.header-v1, 
   .home .site-header.header-v3 {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
   }
   .home .site-header.header-v1.relative,

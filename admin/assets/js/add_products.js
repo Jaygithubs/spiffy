@@ -8,6 +8,8 @@ $(document).ready(function() {
         if (product_add_btn.length) {
             // Disable the submit button to prevent multiple submissions
             product_add_btn.prop('disabled', true);
+            $(".content").css("display","none");
+            $(".loader").css("display","block");
         } else {
             console.error("Submit button not found.");
             return;  // Stop the function if submit button is not found
@@ -38,6 +40,8 @@ $(document).ready(function() {
             },
             complete:function() {
                 product_add_btn.prop('disabled', false);
+                $(".content").css("display","block");
+                $(".loader").css("display","none");
             }
         });
     });
