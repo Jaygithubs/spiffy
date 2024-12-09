@@ -10,16 +10,27 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
     $description = $_POST['discription'];
     $price = $_POST['price'];
     $category = $_POST['category'];
-    $note=$_POST['note'];
+    $note = $_POST['note'];
 
     // File upload directory
     $uploadDir = '../assets/images/productimages/';
+
+    // Function to generate unique file name
+    function generateUniqueFileName($originalFileName) {
+        // Get file extension
+        $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
+        // Generate unique filename based on current timestamp
+        $uniqueFileName = time() . '-' . rand(1000, 9999) . '.' . $fileExtension;
+        return $uniqueFileName;
+    }
 
     // Handle front image upload
     if (isset($_FILES['frontimage']) && $_FILES['frontimage']['error'] == 0) {
         $frontImageName = $_FILES['frontimage']['name'];
         $frontImageTmp = $_FILES['frontimage']['tmp_name'];
-        $frontImagePath = $uploadDir . basename($frontImageName);
+
+        // Generate a unique name for the front image
+        $frontImagePath = $uploadDir . generateUniqueFileName($frontImageName);
         
         // Move front image to upload directory
         if (!move_uploaded_file($frontImageTmp, $frontImagePath)) {
@@ -40,7 +51,9 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
             for ($i = 0; $i < count($_FILES['productimagegallery']['name']); $i++) {
                 $galleryImageName = $_FILES['productimagegallery']['name'][$i];
                 $galleryImageTmp = $_FILES['productimagegallery']['tmp_name'][$i];
-                $galleryImagePath = $uploadDir . basename($galleryImageName);
+
+                // Generate a unique name for the gallery image
+                $galleryImagePath = $uploadDir . generateUniqueFileName($galleryImageName);
                 
                 // Move gallery images to upload directory
                 if (move_uploaded_file($galleryImageTmp, $galleryImagePath)) {
@@ -54,7 +67,9 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
             // If only one image is uploaded (not multiple)
             $galleryImageName = $_FILES['productimagegallery']['name'];
             $galleryImageTmp = $_FILES['productimagegallery']['tmp_name'];
-            $galleryImagePath = $uploadDir . basename($galleryImageName);
+
+            // Generate a unique name for the gallery image
+            $galleryImagePath = $uploadDir . generateUniqueFileName($galleryImageName);
             
             // Move the single gallery image
             if (move_uploaded_file($galleryImageTmp, $galleryImagePath)) {
@@ -75,13 +90,13 @@ if (isset($_POST['productname']) && isset($_POST['discription']) && isset($_POST
     $add_product_sql = $conn->prepare("INSERT INTO `products`(`productname`, `price`, `category`, `shortdiscription`, `discription`, `note`, `frontimages`, `galleryimages`) VALUES (?,?,?,?,?,?,?,?)");
 
     // Bind the parameters: note the types 's' for string, 'd' for decimal, and 's' for the JSON string
-    $add_product_sql->bind_param('sdssssss', $productname, $price, $category, $short_description, $description,$note, $frontImagePath, $galleryJson);
+    $add_product_sql->bind_param('sdssssss', $productname, $price, $category, $short_description, $description, $note, $frontImagePath, $galleryJson);
 
     if ($add_product_sql->execute()) {
         echo json_encode([
             "status" => true,
             "message" => "Product added successfully!",
-            "galleryimagejson"=>$galleryJson
+            "galleryimagejson" => $galleryJson
         ]);
     } else {
         echo json_encode([
